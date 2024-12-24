@@ -1,0 +1,4 @@
+pandas==2.1.0       # For working with Excel/CSV files
+openpyxl==3.1.2     # For reading .xlsx files
+streamlit==1.25.0   # For building the interactive UI
+fuzzywuzzy==0.18.0  # For fuzzy matching (optional)
