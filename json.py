@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+from fuzzywuzzy import process
 import streamlit as st
 
 # Load mapping template
@@ -18,10 +19,11 @@ def generate_json(headers, mapping_template, selected_columns):
     return result
 
 # Streamlit UI
-st.title("Dynamic Header Mapping Tool")
+st.title("Dynamic JSON Mapping Tool")
+st.write("Upload the partner file and template JSON to generate mappings.")
 
 # File uploads
-partner_file = st.file_uploader("Upload Partner File", type=["xlsx", "csv"])
+partner_file = st.file_uploader("Upload Partner File (Excel/CSV)", type=["xlsx", "csv"])
 template_file = st.file_uploader("Upload Mapping JSON Template", type="json")
 
 if partner_file and template_file:
